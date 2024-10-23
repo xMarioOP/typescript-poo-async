@@ -12,14 +12,14 @@ export class MyDate {
   printFormat(): string {
     const day = this.addPading(this.day)
     const month = this.addPading(this.month)
-    return `${this.day}/${this.month}/${this.year}`
+    return `${day}/${month}/${this.year}`
   }
 
-  addPading(value:number){
-    if (value <= 10 ) {
-        return `0${value}`
+  private addPading(value: number) {
+    if (value < 10) {
+      return `0${value}`;
     }
-    return `${value}`
+    return `${value}`;
   }
 
   add(amount: number, type: "days" | "months" | "years") {
@@ -33,8 +33,13 @@ export class MyDate {
       this.year += amount
     }
   }
+  getDay() {
+    return this.day
+  }
 }
 
 const myDate = new MyDate(1998, 7, 9)
 // myDate.day = 12                               //ANYONE CAN MODIFY
 console.log(myDate.printFormat());
+// myDate.addPading(12)                          //ANYONE CAN MODIFY
+console.log(myDate.getDay);
