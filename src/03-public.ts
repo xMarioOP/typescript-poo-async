@@ -27,4 +27,4 @@ export class MyDate {
 }
 
 const myDate = new MyDate(1998, 7, 9)
-myDate.day = 12                               //AND WE CAN MODIFY WHEN ITS PUBLIC
+myDate.day = 12                               //AND EVERYONE CAN MODIFY WHEN ITS PUBLIC
